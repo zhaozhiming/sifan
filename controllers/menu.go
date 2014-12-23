@@ -5,14 +5,8 @@ import (
 	"sifan/models"
 )
 
-// oprations for Menu
 type MenuController struct {
 	beego.Controller
-}
-
-func (c *MenuController) URLMapping() {
-	c.Mapping("AddUser", c.AddUser)
-	c.Mapping("FindUser", c.FindUser)
 }
 
 // @router /user/add [post]

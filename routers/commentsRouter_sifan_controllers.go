@@ -6,6 +6,13 @@ import (
 
 func init() {
 	
+	beego.GlobalControllerRouter["sifan/controllers:MainController"] = append(beego.GlobalControllerRouter["sifan/controllers:MainController"],
+		beego.ControllerComments{
+			"Get",
+			`/`,
+			[]string{"get"},
+			nil})
+
 	beego.GlobalControllerRouter["sifan/controllers:MenuController"] = append(beego.GlobalControllerRouter["sifan/controllers:MenuController"],
 		beego.ControllerComments{
 			"AddUser",
