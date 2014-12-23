@@ -3,6 +3,7 @@ package controllers
 import (
 	"fmt"
 	"github.com/astaxie/beego"
+	"sifan/models"
 )
 
 // oprations for Menu
@@ -25,7 +26,16 @@ func (c *MenuController) URLMapping() {
 // @Failure 403 body is empty
 // @router / [post]
 func (c *MenuController) Post() {
+	beego.Info("post")
 
+	user := new(models.User)
+	user.Name = "zzm"
+	user.Age = 18
+	models.AddUser(user)
+
+	mystruct := map[string]string{"result": "success"}
+	c.Data["json"] = &mystruct
+	c.ServeJson()
 }
 
 // @Title Get
@@ -39,9 +49,10 @@ func (c *MenuController) GetOne() {
 }
 
 func (c *MenuController) Get() {
-	fmt.Println("hello menu")
-	c.TplNames = "index.tpl"
-
+	beego.Info("hello")
+	mystruct := map[string]string{"result": "success"}
+	c.Data["json"] = &mystruct
+	c.ServeJson()
 }
 
 // @Title Get All
@@ -56,8 +67,7 @@ func (c *MenuController) Get() {
 // @Failure 403
 // @router / [get]
 func (c *MenuController) GetAll() {
-	fmt.Println("hello menu all")
-	c.TplNames = "index.tpl"
+	fmt.Println("hello menu")
 }
 
 // @Title Update
