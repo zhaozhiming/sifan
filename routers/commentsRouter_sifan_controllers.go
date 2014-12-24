@@ -8,7 +8,7 @@ func init() {
 	
 	beego.GlobalControllerRouter["sifan/controllers:MainController"] = append(beego.GlobalControllerRouter["sifan/controllers:MainController"],
 		beego.ControllerComments{
-			"Get",
+			"Index",
 			`/`,
 			[]string{"get"},
 			nil})

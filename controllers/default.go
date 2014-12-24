@@ -9,6 +9,6 @@ type MainController struct {
 }
 
 // @router / [get]
-func (c *MainController) Get() {
+func (c *MainController) Index() {
 	c.TplNames = "index.html"
 }
