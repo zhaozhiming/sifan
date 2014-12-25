@@ -1,2 +1,4 @@
 sifan
 *.tmp
+
+.DS_Store
