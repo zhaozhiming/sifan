@@ -5,13 +5,41 @@
   <title>My App</title>
   <link type="text/css" rel="stylesheet" href="static/css/vendor/semantic.css">
   <link type="text/css" rel="stylesheet" href="static/css/vendor/jquery.fullPage.css">
+  <link type="text/css" rel="stylesheet" href="static/css/app.css">
   <script src="static/js/vendor/requirejs.js" data-main="static/js/main"></script>
+
 </head>
 
 <body>
-<div>
-  <h1>Hello world</h1>
+
+<div id="header" class="ui inverted menu">
+    <a class="item" href="#/home">
+        <i class="home icon"></i> 主页
+    </a>
 </div>
+
+
+<div id="fullpage">
+  <div class="section " id="section0">
+    <div class="intro">
+      <h1>Fixed elements</h1>
+      <p>Create your own headers and footers</p>
+    </div>
+  </div>
+  <div class="section" id="section1">
+    <div class="intro">
+      <h1>Hello world</h1>
+    </div>
+
+  </div>
+  <div class="section" id="section2">
+    <div class="intro">
+      <h1>Enjoy it</h1>
+    </div>
+  </div>
+</div>
+
+<div id="footer">Footer</div>
 
 </body>
 </html>

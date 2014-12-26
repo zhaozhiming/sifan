@@ -5,7 +5,8 @@ require.config({
 		angular: 'angular',
 		angularRoute: 'angular-route',
 		fullPage: 'jquery.fullPage',
-		semantic: 'semantic'
+		semantic: 'semantic',
+		slimscroll: 'jquery.slimscroll.min'
 	},
 	shim: {
 		angular: {
@@ -19,14 +20,21 @@ require.config({
 			deps: ['jquery']
 		},
 		fullPage: {
-			deps: ['jquery']
+			deps: ['jquery', 'slimscroll'],
+			exports: 'fullPage'
 		}
 	}	
 });
 
 window.name = "NG_DEFER_BOOTSTRAP";
 
-require(['angular', 'angularRoute', 'semantic', 'fullPage'], function(angular) {
+require(['angular', 'angularRoute', 'fullPage'], function(angular) {
+	$('#fullpage').fullpage({
+		anchors: ['firstPage', 'secondPage', '3rdPage'],
+		sectionsColor: ['#C63D0F', '#1BBC9B', '#7E8F7C'],
+		css3: true
+	});
+
 	var app = angular.module('sifan', ['ngRoute']);
 
 	app.config(['$routeProvider', function ($routeProvider) {
