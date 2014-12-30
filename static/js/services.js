@@ -1,6 +1,5 @@
 'use strict';
 
 define(['angular'], function (angular) {
-	angular.module('myApp.services', [])
-		.value('version', '0.1');
+	angular.module('sifan.services', []).value('version', '0.1');
 });

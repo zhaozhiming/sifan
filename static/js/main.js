@@ -50,8 +50,8 @@ require(['angular', 'app', 'routes', 'full-page'], function(angular, app, routes
 	};
 
 	$('#fullpage').fullpage({
-		sectionsColor: ['#C63D0F', '#1BBC9B', '#7E8F7C'],
-		css3: true
+		'css3': true,
+		'easingcss3': 'cubic-bezier(0.175, 0.885, 0.320, 1.275)'
 	});	
 
 });	

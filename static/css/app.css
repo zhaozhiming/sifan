@@ -38,3 +38,32 @@ h1{
   bottom:0px;
   text-align:center;
 }
+
+#section0{
+    background-image: url(../img/xlx.jpg);
+    padding: 6% 0 0 0;
+}
+#section1{
+    background-image: url(../img/xgt.jpg);
+    padding: 6% 0 0 0;
+}
+#section2{
+    background-image: url(../img/pdsrz.jpeg);
+    padding: 6% 0 0 0;
+}
+#section3{
+    background-image: url(../img/cj.jpeg);
+    padding: 6% 0 0 0;
+}
+#section4{
+    background-image: url(../img/kzt.jpeg);
+    padding: 6% 0 0 0;
+}
+
+#section0,
+#section1,
+#section2,
+#section3,
+#section4{
+    background-size: cover;
+}
