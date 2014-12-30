@@ -1,45 +1,44 @@
+'use strict';
+
 require.config({
-	baseUrl: 'static/js/vendor',
 	paths: {
-		jquery: 'jquery',
-		angular: 'angular',
-		angularRoute: 'angular-route',
-		fullPage: 'jquery.fullPage',
-		semantic: 'semantic',
-		slimscroll: 'jquery.slimscroll.min'
+		'jquery': 'vendor/jquery',
+		'angular': 'vendor/angular',
+		'angular-route': 'vendor/angular-route',
+		'full-page': 'vendor/jquery.fullPage',
+		'semantic': 'vendor/semantic',
+		'slimscroll': 'vendor/jquery.slimscroll.min'
 	},
 	shim: {
-		angular: {
+		'angular': {
 			deps: ['jquery'],
 			exports: 'angular'
 		},
-		angularRoute: {
-			deps: ['angular']
+		'angular-route': {
+			deps: [ 'angular' ]
 		},
-		semantic: {
+		'semantic': {
+			deps: ['jquery'],
+			exports: 'semantic'
+		},
+		'slimscroll': {
 			deps: ['jquery']
 		},
-		fullPage: {
-			deps: ['jquery', 'slimscroll'],
-			exports: 'fullPage'
+		'full-page': {
+			deps: ['slimscroll'],
+			exports: 'full-page'
 		}
-	}	
+	}
 });
 
-window.name = "NG_DEFER_BOOTSTRAP";
+window.name = "NG_DEFER_BOOTSTRAP!";
 
-require(['angular', 'angularRoute', 'fullPage'], function(angular) {
-	$('#fullpage').fullpage({
-		anchors: ['firstPage', 'secondPage', '3rdPage'],
-		sectionsColor: ['#C63D0F', '#1BBC9B', '#7E8F7C'],
-		css3: true
+require(['angular', 'app', 'routes', 'full-page'], function(angular, app, routes){
+    var $html = angular.element(document.getElementsByTagName('html')[0]);
+
+	angular.element().ready(function() {
+		angular.resumeBootstrap([app['name']]);
 	});
-
-	var app = angular.module('sifan', ['ngRoute']);
-
-	app.config(['$routeProvider', function ($routeProvider) {
-	    $routeProvider.otherwise({redirectTo: '/home'});
-	}]);
 
 	var transform = function (data) {
 	    return $.param(data);
@@ -49,4 +48,10 @@ require(['angular', 'angularRoute', 'fullPage'], function(angular) {
 	    headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'},
 	    transformRequest: transform
 	};
-});
+
+	$('#fullpage').fullpage({
+		sectionsColor: ['#C63D0F', '#1BBC9B', '#7E8F7C'],
+		css3: true
+	});	
+
+});	

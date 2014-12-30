@@ -3,21 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <title>My App</title>
-  <link type="text/css" rel="stylesheet" href="static/css/vendor/semantic.css">
   <link type="text/css" rel="stylesheet" href="static/css/vendor/jquery.fullPage.css">
+  <link type="text/css" rel="stylesheet" href="static/css/vendor/semantic.css">
   <link type="text/css" rel="stylesheet" href="static/css/app.css">
-  <script src="static/js/vendor/requirejs.js" data-main="static/js/main"></script>
+  <script type="text/javascript" src="static/js/vendor/requirejs.js" data-main="static/js/main"></script>
+   
+  <!-- 
+  <script src="static/js/vendor/angular-old.js"></script>
+  <script src="static/js/vendor/angular-route-old.js"></script>
+  <script src="static/js/vendor/jquery.js"></script>
+  <script src="static/js/vendor/jquery.slimscroll.min.js"></script>
+  <script src="static/js/vendor/jquery.fullPage.js"></script>
+  <script src="static/js/vendor/semantic.js"></script>
+  <script src="static/js/app.js"></script>
+-->
 
 </head>
-
 <body>
+<div ng-view></div>
 
 <div id="header" class="ui inverted menu">
     <a class="item" href="#/home">
-        <i class="home icon"></i> 主页
+        <i class="home icon"></i>主页
     </a>
 </div>
-
 
 <div id="fullpage">
   <div class="section " id="section0">
@@ -39,7 +48,7 @@
   </div>
 </div>
 
-<div id="footer">Footer</div>
+<div id="footer" class="item">Footer</div>
 
 </body>
 </html>
